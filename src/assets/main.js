@@ -22,7 +22,7 @@ let p7pmesh;
 let p6pmesh;
 
   //new GLTFLoader().load("../public/models/Pixel6Pro.glb", (p6p) => {
-  new GLTFLoader().load("../docs/models/Pixel6Pro.glb", (p6p) => {
+  new GLTFLoader().load("https://rsu-suba.github.io/PixelCameraUnit/docs/models/Pixel6Pro.glb", (p6p) => {
     p6p.scene.traverse((p6pobj) => {
     if(p6pobj.isMesh){}
   });
@@ -54,7 +54,7 @@ let p6pmesh;
   console.log(error)
 });
 //new GLTFLoader().load("../public/models/Pixel8Pro.glb", (p8p) => {
-  new GLTFLoader().load("../docs/models/Pixel8Pro.glb", (p8p) => {
+new GLTFLoader().load("../docs/models/Pixel8Pro.glb", (p8p) => {
     p8p.scene.traverse((p8pobj) => {
     if(p8pobj.isMesh){}
   });
