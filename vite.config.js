@@ -1,7 +1,8 @@
 import { defineConfig } from "vite"; 
 
 export default defineConfig({
-  base:'./',
+  //base:'./PixelCameraUnit/',
+  base:'',
   root: "src",
   build: {
     outDir:"../docs",

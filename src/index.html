@@ -8,7 +8,34 @@
     <link rel="stylesheet" href="./assets/style.css"/>
   </head>
   <body>
-    <div id="canvas"></div>
+    <div id="canvas">
+      <Loading type="spin" color={Theme.pallet.primary} />
+    </div>
+    <div id="options">
+      <text id="postext"></text>
+      <text id="rottext"></text>
+      <div class="phones">
+        <div class="P8P" id="P8P">
+          <img class="phoneimg" src="https://lh3.googleusercontent.com/nqsUxoT3lOuekMugkIoPhEA2c0e7h1VAHs7pvsuCUFXe-PFPDwSdmA0fXWWdzWSHORc4sHD9RSdTyt2f71Zr58iKoXzDqOLU_dKB=rw-e365-nu-w400"/>
+        </div>
+        <div class="P7P" id="P7P">
+          <img class="phoneimg" src="https://lh3.googleusercontent.com/oJPozDOTKzyRGttTgvHZuDYASAi3-lF3r6CO22BcgcrRHeA1xPQyJhYTv362UXzFpdtlctUnxL-zypZv2mw-3TWXlgAMW4r8wA=rw-e365-nu-w400"/>
+        </div>
+        <div class="P6P" id="P6P">
+          <img class="phoneimg" src="https://lh3.googleusercontent.com/gWaIgnnEnUK7gnWGshJE87dMlPZcWb7rV5Z3Y1JDnOk_itFaaMJSgZORURLUHoH44jkOgohhN3vyhsSJr96LGM3HvP8Te6stEVo=rw-e365-nu-w400"/>
+        </div>
+      </div>
+      <div class="phonesbtns" id="phonesbtns">
+        <input type="button" class="phonesbtn-clicked" id="phonesbtn8" onclick="click8();"/>
+        <input type="button" class="phonesbtn-clicked" id="phonesbtn7" onclick="click7();"/>
+        <input type="button" class="phonesbtn-clicked" id="phonesbtn6" onclick="click6();"/>
+      </div>
+    </div>
+    <div id="consoletab">
+      <text id="p8ploaded"></text>
+      <text id="p7ploaded"></text>
+      <text id="p6ploaded"></text>
+    </div>
     <script type="module" src="./assets/main.js"></script>
   </body>
 </html>
