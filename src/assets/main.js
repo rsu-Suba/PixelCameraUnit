@@ -77,6 +77,7 @@ loader.load("../PixelCameraUnit/models/Pixel8Pro-ble.glb", (p8p) => {
 });
 
 const renderer = new THREE.WebGLRenderer( { antialias: true } );
+renderer.setPixelRatio(window.devicePixelRatio);
 var webGLRenderer = new THREE.WebGLRenderer();
 webGLRenderer.shadowMap.enabled = true;
 const controls = new OrbitControls(camera, renderer.domElement)
