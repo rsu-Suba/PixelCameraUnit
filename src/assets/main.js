@@ -1,7 +1,9 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+
+console.log(`v10.30.23`);
+console.log(THREE);
 
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 10000);
 camera.position.set(10, 20, 10);
@@ -22,12 +24,8 @@ let p8pmesh;
 let p7pmesh;
 let p6pmesh;
 
-//const dracoLoader = new DRACOLoader();
-//dracoLoader.setDecoderPath('../PixelCameraUnit/draco/');
 const loader = new GLTFLoader();
-//loader.setDRACOLoader(dracoLoader);
 
-  //loader.load("../public/models/Pixel6Pro.glb", (p6p) => {
   loader.load("../PixelCameraUnit/models/Pixel6Pro-ble.glb", (p6p) => {
     p6p.scene.traverse((p6pobj) => {
     if(p6pobj.isMesh){}
@@ -43,7 +41,6 @@ const loader = new GLTFLoader();
 (error) => {
   console.log(error)
 });
-  //loader.load("../public/models/Pixel7Pro.glb", (p7p) => {
   loader.load("../PixelCameraUnit/models/Pixel7Pro-ble.glb", (p7p) => {
   p7p.scene.traverse((p7pobj) => {
     if(p7pobj.isMesh){}
@@ -59,7 +56,6 @@ const loader = new GLTFLoader();
 (error) => {
   console.log(error)
 });
-//loader.load("../public/models/Pixel8Pro.glb", (p8p) => {
 loader.load("../PixelCameraUnit/models/Pixel8Pro-ble.glb", (p8p) => {
     p8p.scene.traverse((p8pobj) => {
     if(p8pobj.isMesh){}
