@@ -59,20 +59,34 @@ text{
 
 .phones{
   position: relative;
-  height: 100%;
-  width: 21vh;
+  height: 90%;
+  width: 85%;
   display: flex;
   flex-direction: row;
-  margin:4% 0% 4% 5%;
+  margin:7% 7%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .phones div{
-  margin: -5% -7%;
+  width : 85%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  justify-content: center;
 }
 
 .phoneimg{
-  height: 50%;
+  width: 130%;
+  height: 100%;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  bottom: 0.8vh;
+  margin: 0 -10%;
 }
 
 .phonesbtn{
@@ -108,7 +122,7 @@ text{
 @media screen and (orientation:portrait) {
   #options{
     background-color: #f3f2ed;
-    height: 12%;
+    height: 12vh;
     width: 20vh;
     position: fixed;
     right: 1.5vh;
@@ -124,46 +138,56 @@ text{
   
   .phones{
     position: relative;
-    height: 95%;
-    width: 70%;
+    height: 90%;
+    width: 85%;
     display: flex;
     flex-direction: row;
-    margin:5% 5%;
+    margin:7% 7%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   
   .phones div{
-    margin: -5% -5.5%;
+    width : 85%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    justify-content: center;
   }
   
   .phoneimg{
-    top: 4%;
-    margin: 0 auto;
-    height: 46%;
+    width: 120%;
+    height: 100%;
     position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    bottom: 0.8vh;
+    margin: 0 -10%;
   }
-
+  
   .phonesbtn{
     background-color: rgba(0, 0, 0, 0);
-    width: 25%;
+    width: 27%;
     height: 85%;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-radius: 1vh;
+    top: 0;
+    border-radius: 0.6vh;
     border: none;
     position: relative;
-    box-shadow: #666 0.5vh 0.5vh 0.5vh, inset #fff 0.5vh 0.5vh 0.5vh;
+    box-shadow: #666 0.5vh 0.5vh 0.5vh, inset #fff -0.5vh -0.5vh 0.5vh;
   }
   
   .phonesbtn-clicked{
     background-color: rgba(0, 0, 0, 0);
-    width: 25%;
+    width: 27%;
     height: 85%;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-radius: 1vh;
+    top: 0;
+    border-radius: 0.6vh;
     border: none;
     position: relative;
-    box-shadow:inset #444 0.5vh 0.5vh 0.5vh, inset #fff 0.5vh 0.5vh 0.5vh;
+    box-shadow:inset #444 0.5vh 0.5vh 0.5vh, inset #fff -0.5vh -0.5vh 0.5vh;
   }
   
   #consoletab{

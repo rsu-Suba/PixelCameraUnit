@@ -1,9 +1,13 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
+import WebXRPolyfill from './webxr-polyfill.module.js';
 
 console.log(`v10.30.23`);
 console.log(THREE);
+
+const polyfill = new WebXRPolyfill();
 
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 10000);
 camera.position.set(10, 20, 10);
@@ -74,6 +78,8 @@ loader.load("../PixelCameraUnit/models/Pixel8Pro-ble.glb", (p8p) => {
 
 const renderer = new THREE.WebGLRenderer( { antialias: true } );
 renderer.setPixelRatio(window.devicePixelRatio);
+renderer.xr.enabled = true;
+document.body.appendChild(VRButton.createButton(renderer));
 var webGLRenderer = new THREE.WebGLRenderer();
 webGLRenderer.shadowMap.enabled = true;
 const controls = new OrbitControls(camera, renderer.domElement)
