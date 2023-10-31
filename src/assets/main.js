@@ -1,13 +1,9 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import WebXRPolyfill from './webxr-polyfill.module.js';
 
 console.log(`v10.30.23`);
 console.log(THREE);
-
-const polyfill = new WebXRPolyfill();
 
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 10000);
 camera.position.set(10, 20, 10);
@@ -40,7 +36,9 @@ const loader = new GLTFLoader();
   scene.add(p6p.scene);
 },
 (xhr) =>  {
-  document.getElementById("p6ploaded").textContent = `Pixel 6 Pro is ${Math.round((xhr.loaded / xhr.total * 100) * 100) / 100}% loaded`;
+  if (100.00 >= Math.round((xhr.loaded / xhr.total * 100) * 100) / 100){
+    document.getElementById("p6ploaded").textContent = `Pixel 6 Pro is ${Math.round((xhr.loaded / xhr.total * 100) * 100) / 100}% loaded`;
+  }
 },
 (error) => {
   console.log(error)
@@ -55,7 +53,9 @@ const loader = new GLTFLoader();
   scene.add(p7p.scene);
 },
 (xhr) =>  {
-  document.getElementById("p7ploaded").textContent = `Pixel 7 Pro is ${Math.round((xhr.loaded / xhr.total * 100) * 100) / 100}% loaded`;
+  if (100.00 >= Math.round((xhr.loaded / xhr.total * 100) * 100) / 100){
+    document.getElementById("p7ploaded").textContent = `Pixel 7 Pro is ${Math.round((xhr.loaded / xhr.total * 100) * 100) / 100}% loaded`;
+  }
 },
 (error) => {
   console.log(error)
@@ -70,7 +70,9 @@ loader.load("../PixelCameraUnit/models/Pixel8Pro-ble.glb", (p8p) => {
   scene.add(p8p.scene);
 },
 (xhr) =>  {
-  document.getElementById("p8ploaded").textContent = `Pixel 8 Pro is ${Math.round((xhr.loaded / xhr.total * 100) * 100) / 100}% loaded`;
+  if (100.00 >= Math.round((xhr.loaded / xhr.total * 100) * 100) / 100){
+    document.getElementById("p8ploaded").textContent = `Pixel 8 Pro is ${Math.round((xhr.loaded / xhr.total * 100) * 100) / 100}% loaded`;
+  }
 },
 (error) => {
   console.log(error)
@@ -78,8 +80,6 @@ loader.load("../PixelCameraUnit/models/Pixel8Pro-ble.glb", (p8p) => {
 
 const renderer = new THREE.WebGLRenderer( { antialias: true } );
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.xr.enabled = true;
-document.body.appendChild(VRButton.createButton(renderer));
 var webGLRenderer = new THREE.WebGLRenderer();
 webGLRenderer.shadowMap.enabled = true;
 const controls = new OrbitControls(camera, renderer.domElement)
